@@ -6,15 +6,23 @@ public class PickUp : Interactable
 {
     [SerializeField] private Item _item = null;
 
-    public override void Interact()
+    protected override void Interact()
     {
         base.Interact();
-
         Pick();
     }
 
     private void Pick()
     {
         Debug.Log("PickingUp : " + _item.name);
+    }
+
+    private void Update()
+    {
+        VerifDistance();
+        if(_hasInteracted == true)
+        {
+            Interact();
+        }
     }
 }
