@@ -1,0 +1,161 @@
+atomVersion 1.0;
+mayaVersion 2019;
+mayaSceneFile C:/Users/étudiant/Desktop/HotDogz/all/voxel_new_6_anim_2.mb;
+timeUnit film;
+linearUnit cm;
+angularUnit deg;
+startTime 1;
+endTime 50;
+dagNode {
+  shiba 1 2;
+  anim scale.scaleX scaleX 0;
+  animData {
+    input time;
+    output unitless;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1 auto auto 1 0 0;
+      7 1 auto auto 1 0 0;
+      13 1 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 1 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 1 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim scale.scaleY scaleY 1;
+  animData {
+    input time;
+    output unitless;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0.80626837 auto auto 1 0 0;
+      7 1 auto auto 1 0 0;
+      13 0.80626837 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 1 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0.80626837 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim scale.scaleZ scaleZ 2;
+  animData {
+    input time;
+    output unitless;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1 auto auto 1 0 0;
+      7 1 auto auto 1 0 0;
+      13 1 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 1 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 1 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim visibility visibility 3;
+  animData {
+    input time;
+    output unitless;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 1 spline step 1 0 0;
+      7 1 spline step 1 0 0;
+      13 1 fixed step 1 0 0 0 1.9999999;
+      19 1 fixed step 1 0 0 0 1.9999999;
+      24 1 fixed step 1 0 0 0 1.9999999;
+    }
+  }
+  anim translate.translateX translateX 4;
+  animData {
+    input time;
+    output linear;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      7 0 auto auto 1 0 0;
+      13 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 0 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim translate.translateY translateY 5;
+  animData {
+    input time;
+    output linear;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0.63388096 auto auto 1 0 0;
+      7 0.47858854 auto auto 1 0 0;
+      13 0.63388096 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 0.47858854 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0.63388096 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim translate.translateZ translateZ 6;
+  animData {
+    input time;
+    output linear;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      7 0 auto auto 1 0 0;
+      13 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 0 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim rotate.rotateX rotateX 7;
+  animData {
+    input time;
+    output angular;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 15 auto auto 1 0 0;
+      7 -15 auto auto 1 0 0;
+      13 15 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 -15 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 15 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim rotate.rotateY rotateY 8;
+  animData {
+    input time;
+    output angular;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      7 0 auto auto 1 0 0;
+      13 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 0 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+  anim rotate.rotateZ rotateZ 9;
+  animData {
+    input time;
+    output angular;
+    weighted 1;
+    preInfinity constant;
+    postInfinity constant;
+    keys {
+      1 0 auto auto 1 0 0;
+      7 0 auto auto 1 0 0;
+      13 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+      19 0 fixed fixed 1 0 0 0 1.9999999 0 2.0000002;
+      24 0 fixed fixed 1 0 0 0 1.9999999 0 1.9999999;
+    }
+  }
+}
