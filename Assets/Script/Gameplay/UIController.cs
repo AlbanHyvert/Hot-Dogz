@@ -12,22 +12,21 @@ public class UIController : MonoBehaviour
     [SerializeField] static private TextMeshProUGUI _heatText = null;
     #endregion
 
-    private void Update()
+    private void Start()
     {
         if (_scoreText != null && _heatText != null)
         {
-            Debug.Log("In UI");
             GameManager.Instance.ScoreChange += OnScoreChange;
             GameManager.Instance.HeatChange += OnHeatChange;
         }
     }
 
-    static public void OnScoreChange(int score)
+    public static void OnScoreChange(int score)
     {
         _scoreText.text = "Score : " + score.ToString();
     }
 
-    static public void OnHeatChange(float heat)
+    public static void OnHeatChange(float heat)
     {
         _heatText.text = "Heat : " + heat.ToString();
     }

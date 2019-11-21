@@ -9,9 +9,6 @@ public class PlayerMotor : MonoBehaviour
     private Transform _target = null;
     private NavMeshAgent _agent;
     // Start is called before the first frame update
-
-        public NavMeshAgent Agent { get { return _agent; } }
-
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -31,12 +28,12 @@ public class PlayerMotor : MonoBehaviour
         _agent.SetDestination(point);
     }
 
-    /*public void FollowTarget(Transform newTarget)
+    public void FollowTarget(Interactable newTarget)
     {
-        _agent.stoppingDistance = newTarget.transform.position;
+        _agent.stoppingDistance = newTarget.Radius * 1.5f;
         _agent.updateRotation = false;
         _target = newTarget.transform;
-    }*/
+    }
 
     public void StopFollowingTarget()
     {

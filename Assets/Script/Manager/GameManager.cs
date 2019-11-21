@@ -7,6 +7,8 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     private int _score = 0;
+    [SerializeField] GameObject _pauseMenu = null;
+    private bool _isPaused = false;
 
     #region Events
     private event Action<int> _scoreChange = null;
@@ -52,7 +54,25 @@ public class GameManager : Singleton<GameManager>
                 _scoreChange(_score);
         }
     }
-
+    public bool IsPaused { get { return _isPaused; } set { _isPaused = value; } }
 
     #endregion Properties
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            _isPaused = !_isPaused;
+
+            if(_pauseMenu != null && _isPaused == true)
+            {
+                _pauseMenu.SetActive(true);
+            }
+        }
+
+        if(_isPaused == false)
+        {
+            _pauseMenu.SetActive(false);
+        }
+    }
 }

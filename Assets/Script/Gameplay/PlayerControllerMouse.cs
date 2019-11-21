@@ -42,7 +42,7 @@ public class PlayerControllerMouse : MonoBehaviour
             }
         }
 
-        if(_focus == true)
+        /*if(_focus == true)
         {
             Debug.Log("Focus : " + _focus);
             _motor.Agent.SetDestination(_target.position);
@@ -55,7 +55,7 @@ public class PlayerControllerMouse : MonoBehaviour
                 _motor.StopFollowingTarget();
             }
 
-        }
+        }*/
     }
 
 
