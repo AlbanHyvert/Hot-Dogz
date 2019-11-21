@@ -34,7 +34,7 @@ public class BreakWindow : MonoBehaviour , IInteract
             if(_hitWindow <= 0)
             {
                 GiveShiba = Instantiate(_shiba, _shibaholder.ShibaHolder.transform.position, Quaternion.identity, _shibaholder.ShibaHolder.transform);
-                _shiba.GetComponent<Collider>().enabled = false;
+                _shiba.GetComponent<Collider>().enabled = true;
                 Debug.Log("Give SHiba :" + GiveShiba);
                 _hitWindow = 4;
             }

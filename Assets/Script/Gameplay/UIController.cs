@@ -8,25 +8,26 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     #region Fields
-    [SerializeField] private TextMeshProUGUI _scoreText = null;
-    [SerializeField] private TextMeshProUGUI _heatText = null;
+    [SerializeField] static private TextMeshProUGUI _scoreText = null;
+    [SerializeField] static private TextMeshProUGUI _heatText = null;
     #endregion
 
-    private void Start()
+    private void Update()
     {
         if (_scoreText != null && _heatText != null)
         {
+            Debug.Log("In UI");
             GameManager.Instance.ScoreChange += OnScoreChange;
             GameManager.Instance.HeatChange += OnHeatChange;
         }
     }
 
-    private void OnScoreChange(int score)
+    static public void OnScoreChange(int score)
     {
         _scoreText.text = "Score : " + score.ToString();
     }
 
-    private void OnHeatChange(float heat)
+    static public void OnHeatChange(float heat)
     {
         _heatText.text = "Heat : " + heat.ToString();
     }
