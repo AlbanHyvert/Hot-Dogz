@@ -9,6 +9,7 @@ public class BreakWindow : MonoBehaviour , IInteract
     [SerializeField] private GameObject _shiba = null;
     private GameObject _giveShiba = null;
     [SerializeField] private int _hitWindow = 4;
+    [SerializeField] Controller _shibaholder = null;
 
     #region Properties
     public GameObject GiveShiba { get { return _giveShiba; } set { _giveShiba = value; } }
@@ -32,9 +33,9 @@ public class BreakWindow : MonoBehaviour , IInteract
 
             if(_hitWindow <= 0)
             {
-                GiveShiba = Instantiate(_shiba, transform.position, Quaternion.identity, transform);
+                GiveShiba = Instantiate(_shiba, _shibaholder.ShibaHolder.transform.position, Quaternion.identity, _shibaholder.ShibaHolder.transform);
+                _shiba.GetComponent<Collider>().enabled = false;
                 Debug.Log("Give SHiba :" + GiveShiba);
-                _shiba = null;
                 _hitWindow = 4;
             }
         }
