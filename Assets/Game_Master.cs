@@ -6,6 +6,9 @@ using TMPro;
 public class Game_Master : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _points = null;
+    [SerializeField] private TextMeshProUGUI _heat = null;
+    [SerializeField] private GameObject _gameOver = null;
+    [SerializeField] private newControlleur _player = null;
 
     public Car[] cars;
 
@@ -22,6 +25,7 @@ public class Game_Master : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _gameOver.SetActive(false);
         EndGame();
         carsList = new List<Car>();
     }
@@ -29,9 +33,11 @@ public class Game_Master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _heat.text =  "HEAT : " +_player.SlowDown.ToString();
         if (DefeatCondition >= cars.Length)
         {
-            EndGame();
+            _gameOver.SetActive(true);
+            Time.timeScale = 0;
         }
         CountTime();
         OnPoints();

@@ -6,23 +6,42 @@ public class newControlleur : MonoBehaviour
 {
     CharacterController characterController;
     public float speed = 3.0F;
+    public float _tempSpeed = 0;
     public float rotateSpeed = 3.0F;
     public GameObject[] doggo;
     public GameObject spawnPoint;
     public float launchforce = 10f;
+    private float _slowDown = 0f;
+    public float SlowDown { get { return _slowDown; } set { _slowDown = value; } }
+
     [HideInInspector] public bool DogInHand = false;
     private GameObject actualDoggo;
     void Start()
     {
+        _tempSpeed = speed;
         characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(speed <= 0)
+        {
+            speed = 0;
+        }
+        Debug.Log(speed);
         MovePlayer();
-        if(DogInHand){
+        if(DogInHand)
+        {
+            if(SlowDown <= speed)
+                SlowDown += 0.001f;
             LaunchDoggo();
+            speed = speed - SlowDown * Time.deltaTime;
+        }
+
+        if(!DogInHand)
+        {
+            speed = _tempSpeed;
         }
     
     }
