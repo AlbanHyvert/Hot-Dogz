@@ -8,6 +8,7 @@ public class Car : MonoBehaviour
     Animator animatorCar;
     public float timebeforedogDie = 8f;
     float tmptimer;
+    [SerializeField] private Game_Master _gameMaster = null;
     [HideInInspector] public bool isAlive = false;
     
     void Start()
@@ -18,9 +19,12 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isAlive){
+        if(isAlive)
+        {
             tmptimer += Time.deltaTime;
-            if(tmptimer > timebeforedogDie){
+            if(tmptimer > timebeforedogDie)
+            {
+                _gameMaster.DefeatCondition++;
                 Destroy(gameObject);
             }
         }else{
@@ -29,14 +33,17 @@ public class Car : MonoBehaviour
         
     }
 
-    public void DogNeedHelp(){
+    public void DogNeedHelp()
+    {
 
         animatorCar.SetTrigger("Activate");
         isAlive = true;
 
     }
 
-    public void DogSave(){
+    public void DogSave()
+    {
+        _gameMaster.GetPoint += 10;
         animatorCar.SetTrigger("Save");
     }
 

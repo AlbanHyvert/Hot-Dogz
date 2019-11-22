@@ -1,25 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game_Master : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _points = null;
 
     public Car[] cars;
 
     public List<Car> carsList;
     public float timeBeforeDogSpawn;
     private float tmptimer = 0f;
+
+    private int _defeatCondition = 0;
+    public int DefeatCondition { get { return _defeatCondition; } set { _defeatCondition = value; } }
+
+    private int _getPoint = 0;
+    public int GetPoint { get { return _getPoint; } set { _getPoint = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
+        EndGame();
         carsList = new List<Car>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        EndGame();
         CountTime();
+        OnPoints();
     }
 
     public IEnumerator Spawndog(){
@@ -45,5 +57,20 @@ public class Game_Master : MonoBehaviour
 
             }
         }
+    }
+
+    private void EndGame()
+    {
+        if(DefeatCondition >= cars.Length)
+        {
+            Debug.Log("You lose");
+            Application.Quit();
+        }
+
+    }
+
+    private void OnPoints()
+    {
+        _points.text = "Scoring : " + _getPoint.ToString();
     }
 }

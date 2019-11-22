@@ -48,7 +48,8 @@ public class newControlleur : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerStay(Collider other)
+    {
         if(Input.GetKeyDown(KeyCode.Space) && DogInHand == false && other.tag == "car"){
             other.GetComponent<Car>().isAlive = false;
             other.GetComponent<Car>().DogSave();
