@@ -244,6 +244,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7445328774151980467, guid: 74e3f27809cf4484bbec79480276a2ad,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445328775323541443, guid: 74e3f27809cf4484bbec79480276a2ad,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9110b2714cf8b2348b6016a72198767f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e3f27809cf4484bbec79480276a2ad, type: 3}
 --- !u!1 &944946351
