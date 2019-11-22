@@ -29,7 +29,10 @@ public class Game_Master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EndGame();
+        if (DefeatCondition >= cars.Length)
+        {
+            EndGame();
+        }
         CountTime();
         OnPoints();
     }
@@ -59,14 +62,9 @@ public class Game_Master : MonoBehaviour
         }
     }
 
-    private void EndGame()
+    public void EndGame()
     {
-        if(DefeatCondition >= cars.Length)
-        {
-            Debug.Log("You lose");
             Application.Quit();
-        }
-
     }
 
     private void OnPoints()
