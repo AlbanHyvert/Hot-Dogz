@@ -26,7 +26,6 @@ public class Game_Master : MonoBehaviour
     void Start()
     {
         _gameOver.SetActive(false);
-        EndGame();
         carsList = new List<Car>();
     }
 
@@ -38,6 +37,7 @@ public class Game_Master : MonoBehaviour
         {
             _gameOver.SetActive(true);
             Time.timeScale = 0;
+            EndGame();
         }
         CountTime();
         OnPoints();
